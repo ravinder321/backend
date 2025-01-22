@@ -22,7 +22,9 @@ MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
     console.error('Error connecting to MongoDB:', err);
   });
-
+app.get('/',async(req,res)=>{
+  res.send('hello');
+})
 // Register Route
 app.post('/register', async (req, res) => {
   const { email, password } = req.body;
